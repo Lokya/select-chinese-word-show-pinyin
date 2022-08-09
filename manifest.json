@@ -1,0 +1,32 @@
+{
+  "name": "select-chinese-word-show-pinyin",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Select a chinese word and show pinyin on it",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "test",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "css": ["css/index.css"],
+      "js": ["js/jquery.min.js", "js/popper.min.js", "js/tippy-bundle.umd.min.js", "js/index.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "tabs",
+    "http://*/",
+    "https://*/"
+  ]
+}
